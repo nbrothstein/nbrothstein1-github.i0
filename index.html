@@ -1,135 +1,219 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Noah Rothstein - Portfolio</title>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body, h1, h2, h3, h4, h5, h6 {
-            font-family: "Montserrat", sans-serif;
+        /* Global Styles */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
         }
 
-        .w3-sidebar {
-            width: 120px;
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(to right, #3a6186, #89253e);
+            color: #fff;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100%;
             background: #222;
+            overflow-y: auto;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
         }
 
-        #main {
-            margin-left: 120px;
+        nav.active {
+            transform: translateX(0);
         }
 
-        @media (max-width: 600px) {
-            #main {
-                margin-left: 0;
-            }
+        nav ul {
+            list-style: none;
+            padding: 0;
         }
 
+        nav ul li {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        nav ul li a {
+            color: #fff;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff9800;
+        }
+
+        .menu-toggle {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            font-size: 2rem;
+            color: #fff;
+            background: #222;
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        /* Sections */
+        section {
+            padding: 50px 20px;
+            margin: 20px auto;
+            max-width: 1000px;
+            background: #f4f4f4;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            color: #3a6186;
+            margin-bottom: 20px;
+        }
+
+        section p {
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        /* Buttons */
         .button {
             display: inline-block;
-            padding: 10px 20px;
-            font-size: 16px;
+            padding: 12px 25px;
+            font-size: 1rem;
             color: #fff;
-            background-color: #28a745;
+            background: #3a6186;
             border: none;
             border-radius: 5px;
-            text-decoration: none;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: background 0.3s;
         }
 
         .button:hover {
-            background-color: #218838;
+            background: #89253e;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #222;
+            color: #fff;
+        }
+
+        footer a {
+            color: #ff9800;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            nav ul li a {
+                font-size: 1rem;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 30px 15px;
+            }
         }
     </style>
 </head>
-<body class="w3-black">
+<body>
 
     <!-- Sidebar -->
-    <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
-        <img src="audio-visualisation1.jpg" alt="Audio Visualization" style="width:100%">
-        <a href="#home" class="w3-bar-item w3-button w3-padding-large w3-black">
-            <i class="fa fa-th-large w3-xxlarge"></i>
-            <p>HOME</p>
-        </a>
-        <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-            <i class="fa fa-info-circle w3-xxlarge"></i>
-            <p>ABOUT ME</p>
-        </a>
-        <a href="#portfolio" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-            <i class="fa fa-image w3-xxlarge"></i>
-            <p>PORTFOLIO</p>
-        </a>
-        <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-            <i class="fa fa-phone-square w3-xxlarge"></i>
-            <p>CONTACT</p>
-        </a>
+    <button class="menu-toggle" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </button>
+    <nav id="sidebar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
     </nav>
 
-    <!-- Navbar for small screens -->
-    <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
-        <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
-            <a href="#home" class="w3-bar-item w3-button">HOME</a>
-            <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
-            <a href="#portfolio" class="w3-bar-item w3-button">PORTFOLIO</a>
-            <a href="#contact" class="w3-bar-item w3-button">CONTACT</a>
-        </div>
-    </div>
+    <!-- Header -->
+    <header id="home">
+        <h1>Welcome to My Portfolio</h1>
+        <p>Hi, I'm Noah Rothstein, an Audio/Video Media Production Student</p>
+    </header>
 
-    <!-- Main Content -->
-    <main class="w3-padding-large" id="main">
-        <!-- Header -->
-        <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
-            <h1 class="w3-jumbo">I'm Noah Rothstein</h1>
-            <p>Audio/Video Student</p>
-            <img src="audio-visualisation1.jpg" alt="Noah Rothstein" class="w3-image" width="992" height="1108">
-        </header>
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            I am a sophomore at Howard Community College majoring in Audio/Video Media Production. My goal is to work as a sound designer across various multimedia platforms.
+        </p>
+        <p><strong>Skills:</strong> Ableton Live (3 years), ProTools (1 year).</p>
+        <p><strong>Interests:</strong> Creating music, spending time with family, and snowboarding.</p>
+    </section>
 
-        <!-- About Section -->
-        <section class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
-            <h2 class="w3-text-light-grey">About Me</h2>
-            <hr style="width:200px" class="w3-opacity">
-            <p>
-                I am a sophomore at Howard Community College majoring in Audio Video Media Production. My goal is to work as a sound designer in various multimedia formats.
-            </p>
-            <p>
-                <strong>Key Experience:</strong> Over 10 years in customer service, including positions at Aspen Skiing Company and as valet at a luxury boutique hotel.
-                <strong>Skills:</strong> Proficiency in Ableton Live (3 years) and ProTools (1 year).
-                <strong>Interests:</strong> Creating music, spending time with family, and snowboarding.
-            </p>
-        </section>
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <h2>My Portfolio</h2>
+        <p>Check out my class projects and creative works:</p>
+        <a href="https://vimeo.com/user/231066749/folder/22919886" target="_blank" rel="noopener noreferrer" class="button">View Portfolio</a>
+    </section>
 
-        <!-- Resume Section -->
-        <section class="w3-padding-64 w3-content">
-            <h2 class="w3-text-light-grey">My Resume</h2>
-            <hr style="width:200px" class="w3-opacity">
-            <p>Check out my academic and professional accomplishments!</p>
-            <a href="resume.pdf" download class="button">Download Resume</a>
-        </section>
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Feel free to reach out via email or connect with me on LinkedIn:</p>
+        <a href="mailto:noah.rothstein1@gmail.com" class="button">Email Me</a>
+        <a href="https://www.linkedin.com/in/noah-rothstein-a4a590329/" target="_blank" rel="noopener noreferrer" class="button">LinkedIn</a>
+    </section>
 
-        <!-- Portfolio Section -->
-        <section class="w3-padding-64 w3-content" id="portfolio">
-            <h2 class="w3-text-light-grey">My Portfolio</h2>
-            <hr style="width:200px" class="w3-opacity">
-            <p>View my classwork and projects:</p>
-            <a href="https://vimeo.com/user/231066749/folder/22919886" target="_blank" rel="noopener noreferrer" class="button">View Portfolio</a>
-        </section>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Noah Rothstein | <a href="#home">Back to Top</a></p>
+    </footer>
 
-        <!-- LinkedIn Section -->
-        <section class="w3-padding-64 w3-content w3-text-grey" id="linkedin">
-            <h2 class="w3-text-light-grey">Connect with Me</h2>
-            <hr style="width:200px" class="w3-opacity">
-            <a href="https://www.linkedin.com/in/noah-rothstein-a4a590329/" target="_blank" rel="noopener noreferrer" class="button">View My LinkedIn</a>
-        </section>
-
-        <!-- Contact Section -->
-        <section class="w3-padding-64 w3-content w3-text-grey" id="contact">
-            <h2 class="w3-text-light-grey">Contact Me</h2>
-            <hr style="width:200px" class="w3-opacity">
-            <a href="mailto:noah.rothstein1@gmail.com" class="button">Email Me</a>
-        </section>
-    </main>
+    <!-- JavaScript -->
+    <script>
+        function toggleMenu() {
+            document.getElementById('sidebar').classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
