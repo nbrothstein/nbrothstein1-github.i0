@@ -11,98 +11,21 @@
         body, h1, h2, h3, h4, h5, h6 {
             font-family: "Montserrat", sans-serif;
         }
-
-        /* Sidebar Styling */
+        .w3-row-padding img {
+            margin-bottom: 12px;
+        }
         .w3-sidebar {
             width: 120px;
-            background: linear-gradient(to bottom, #3a6186, #89253e);
+            background: #222;
         }
-
-        /* Main Content Adjustments */
         #main {
             margin-left: 120px;
         }
-
         @media only screen and (max-width: 600px) {
             #main {
                 margin-left: 0;
             }
         }
-
-        /* Header Styling */
-        header {
-            background: linear-gradient(to right, #3498db, #8e44ad);
-            color: white;
-            text-align: center;
-            padding: 60px 20px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        header h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-        }
-
-        header p {
-            font-size: 1.5rem;
-        }
-
-        /* Button Styling */
-        .button, .resume-button, .portfolio-button {
-            display: inline-block;
-            padding: 12px 25px;
-            font-size: 16px;
-            color: #fff;
-            background-color: #3498db;
-            border: none;
-            border-radius: 8px;
-            text-decoration: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 10px;
-        }
-
-        .button:hover, .resume-button:hover, .portfolio-button:hover {
-            background-color: #2980b9;
-            transform: translateY(-2px);
-        }
-
-        /* Section Styling */
-        .w3-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .w3-text-light-grey {
-            color: #ecf0f1;
-        }
-
-        .w3-padding-64 {
-            padding: 64px 0;
-        }
-
-        .w3-opacity {
-            opacity: 0.6;
-        }
-
-        /* Card Styling for Sections */
-        .w3-card-4 {
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-        }
-
-        /* Links in Sidebar */
-        .w3-bar-item {
-            color: #fff;
-            transition: background-color 0.3s;
-        }
-
-        .w3-bar-item:hover {
-            background-color: #3498db;
-        }
-
     </style>
 </head>
 <body class="w3-black">
@@ -151,22 +74,18 @@
         <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
             <h2 class="w3-text-light-grey">About Me</h2>
             <hr style="width:200px" class="w3-opacity">
-            <div class="w3-card-4">
-                <p>
-                    Noah Rothstein is a sophomore at Howard Community College majoring in Audio Video Media Production. After graduation,
-                    Noah aims to work as a sound designer in various multimedia formats.
-                    <strong>Key Experience:</strong> Over 10 years in customer service, including positions at Aspen Skiing Company and as valet at a luxury boutique hotel.
-                    <strong>Skills:</strong> Proficiency in Ableton Live (3 years) and ProTools (1 year).
-                    <strong>Interests:</strong> Creating music, spending time with family, and snowboarding.
-                </p>
-            </div>
-        </div>
-
-        <!-- Resume Section -->
-        <div class="w3-padding-64 w3-content" id="photos">
-            <h2 class="w3-text-light-grey">My Resume</h2>
-            <hr style="width:200px" class="w3-opacity">
+            <p>
+                Noah Rothstein is a sophomore at Howard Community College majoring in Audio Video Media Production. After graduation,
+                Noah aims to work as a sound designer in various multimedia formats.
+                <strong>Key Experience:</strong> Over 10 years in customer service, including positions at Aspen Skiing Company and as valet at a luxury boutique hotel.
+                <strong>Skills:</strong> Proficiency in Ableton Live (3 years) and ProTools (1 year).
+                <strong>Interests:</strong> Creating music, spending time with family, and snowboarding.
+            </p>
+            <div class="w3-padding-64 w3-content" id="photos">
+                <h2 class="w3-text-light-grey">My Resume</h2>
+                <hr style="width:200px" class="w3-opacity">
             <a href="resume.pdf" download class="resume-button">Download Resume</a>
+
         </div>
 
         <!-- Portfolio Section -->
@@ -174,16 +93,36 @@
             <h2 class="w3-text-light-grey">My Portfolio</h2>
             <hr style="width:200px" class="w3-opacity">
             <a href="https://vimeo.com/user/231066749/folder/22919886" target="_blank" class="portfolio-button">View Portfolio</a>
-        </div>
 
+        </div>
         <!-- LinkedIn Section -->
         <div class="w3-padding-64 w3-content w3-text-grey" id="linkedin">
             <h2 class="w3-text-light-grey">Connect with Me</h2>
             <hr style="width:200px" class="w3-opacity">
+
             <p>LinkedIn profile:</p>
+
             <a href="https://www.linkedin.com/in/noah-rothstein-a4a590329/" target="_blank" class="button">View My LinkedIn</a>
         </div>
-    </div>
+
+        <style>
+            .button {
+                display: inline-block;
+                padding: 10px 20px;
+                font-size: 16px;
+                color: #fff;
+                background-color: #28a745; /* Green color */
+                border: none;
+                border-radius: 5px;
+                text-decoration: none;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+            .button:hover {
+                background-color: #218838; /* Darker green on hover */
+            }
+        </style>
+
 
 </body>
 </html>
