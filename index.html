@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html>
 <head>
     <title>W3.CSS Template</title>
@@ -25,6 +25,23 @@
             #main {
                 margin-left: 0;
             }
+        }
+
+        /* Button Styling */
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #28a745; /* Green color */
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #218838; /* Darker green on hover */
         }
     </style>
 </head>
@@ -81,48 +98,44 @@
                 <strong>Skills:</strong> Proficiency in Ableton Live (3 years) and ProTools (1 year).
                 <strong>Interests:</strong> Creating music, spending time with family, and snowboarding.
             </p>
-            <div class="w3-padding-64 w3-content" id="photos">
-                <h2 class="w3-text-light-grey">My Resume</h2>
-                <hr style="width:200px" class="w3-opacity">
-            <a href="resume.pdf" download class="resume-button">Download Resume</a>
 
+
+        </div>
+
+        <!-- Resume Section -->
+        <div class="w3-padding-64 w3-content">
+            <h2 class="w3-text-light-grey">My Resume</h2>
+            <hr style="width:200px" class="w3-opacity">
+            <p class="section-description">
+             You can view my academic and professional accomplishments as well as my skills here!
+         </p>
+            <a href="resume.pdf" download class="button">Download Resume</a>
         </div>
 
         <!-- Portfolio Section -->
         <div class="w3-padding-64 w3-content" id="photos">
             <h2 class="w3-text-light-grey">My Portfolio</h2>
             <hr style="width:200px" class="w3-opacity">
-            <a href="https://vimeo.com/user/231066749/folder/22919886" target="_blank" class="portfolio-button">View Portfolio</a>
-
+            <p class="section-description">
+       View the work I have done for my classes!
+   </p>
+            <a href="https://vimeo.com/user/231066749/folder/22919886" target="_blank" class="button">View Portfolio</a>
         </div>
+
         <!-- LinkedIn Section -->
         <div class="w3-padding-64 w3-content w3-text-grey" id="linkedin">
             <h2 class="w3-text-light-grey">Connect with Me</h2>
             <hr style="width:200px" class="w3-opacity">
-
-            <p>LinkedIn profile:</p>
-
             <a href="https://www.linkedin.com/in/noah-rothstein-a4a590329/" target="_blank" class="button">View My LinkedIn</a>
         </div>
 
-        <style>
-            .button {
-                display: inline-block;
-                padding: 10px 20px;
-                font-size: 16px;
-                color: #fff;
-                background-color: #28a745; /* Green color */
-                border: none;
-                border-radius: 5px;
-                text-decoration: none;
-                cursor: pointer;
-                transition: background-color 0.3s;
-            }
-            .button:hover {
-                background-color: #218838; /* Darker green on hover */
-            }
-        </style>
+        <!-- Email Section -->
+<div class="w3-padding-64 w3-content w3-text-grey" id="email">
+    <h2 class="w3-text-light-grey">Contact Me</h2>
+    <hr style="width:200px" class="w3-opacity">
+    <a href="mailto:noah.rothstein1@gmail.com" class="button">Email Me</a>
+</div>
 
-
+    </div>
 </body>
 </html>
